@@ -1,0 +1,39 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+}
+
+nav{
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-container{
+    display: grid;
+    grid-template-rows: 150px 150px 150px;
+    grid-template-columns: 150px 150px 150px;
+    row-gap: 10px;
+    column-gap: 10px;
+    border: 2px solid black;
+    width: fit-content;
+    padding: 10px;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.box{
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 6em;
+}
+
+.box:hover{
+    background-color: rgb(235, 235, 235);
+}
