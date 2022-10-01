@@ -1,15 +1,24 @@
-import React from "react";
+import React, {useContext} from "react";
+import { turnContext } from "./index";
 
-function Box() {
+function Box(props) {
+
+    const [isClicked, setIsClicked] = React.useState(false)
+    const [symbol, setSymbol] = React.useState("")
+    const {turn, changeTurn} = useContext(turnContext)
 
     function handleClick() {
         setIsClicked(true)
+        changeTurn()
+        if(symbol === "") {
+            setSymbol(turn)
+        }
     }
 
-    const [isClicked, setIsClicked] = React.useState(false)
+
     return(
         <div onClick={handleClick} className="box">
-            {isClicked && "X"}
+            {isClicked && symbol}
         </div>
     )
 }
